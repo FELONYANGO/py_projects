@@ -3,6 +3,9 @@ import openpyxl as xl
 wk = xl.load_workbook("transactions.xlsx")
 
 sheet = wk["Sheet1"]
-cell= sheet.cell(1,1)
+cell= sheet["a1"]
 
-print(cell.value)
+for  row in range(1,sheet.max_row + 1):#looping through each row in the sheet 1
+    print(row)
+    cell = sheet.cell(row  ,3)
+    print(cell)
